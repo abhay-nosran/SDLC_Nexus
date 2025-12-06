@@ -6,13 +6,16 @@ from srs_phase import embeddings
 from srs_phase import chunking 
 from vectorDb import uploadEmbeddings
 
-document = loadFile.loadPdf(loadFile.filePath) 
+def uploadInVedctorDb(filePath):
+    
+    document = loadFile.loadPdf(filePath) 
 
-#do chunking
-chunks = chunking.spiltDoc(document) 
+    #do chunking
+    chunks = chunking.spiltDoc(document) 
 
-# #create embeddings 
-# vectors = embeddings.createEmbedings(chunks) 
+    # #create embeddings 
+    # vectors = embeddings.createEmbedings(chunks) 
 
-#create and store 
-uploadEmbeddings.uploadEmbbedings(chunks) 
+    #create and store 
+    uploadEmbeddings.uploadEmbbedings(chunks) 
+    print("Upload in vector db complete")
